@@ -41,3 +41,19 @@ function sortearAmigo() {
 
 	resultado.innerHTML = `O amigo secreto sorteado é: **${amigoSorteado}**!` ; // Exibe o resultado do sorteio na tela
 }
+
+// --- NOVO CÓDIGO PARA O ENTER ---
+
+// 1. Obter uma referência ao campo de entrada (input)
+let campoNomeAmigo = document.getElementById('amigo');
+
+// 2. Adicionar um ouvinte de eventos para a tecla pressionada
+campoNomeAmigo.addEventListener('keydown', function(event) {
+    // 3. Verificar se a tecla pressionada foi 'Enter' (código 13 ou o mais moderno 'Enter')
+    if (event.key === 'Enter') { // ou event.keyCode === 13 para navegadores mais antigos
+        // 4. Se for Enter, chamar a função adicionarAmigo()
+        adicionarAmigo();
+        // Opcional: Impedir o comportamento padrão do Enter (que em alguns formulários recarrega a página)
+        event.preventDefault(); 
+    }
+});
